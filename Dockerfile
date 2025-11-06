@@ -10,8 +10,8 @@ COPY app.py .
 # Install Python dependencies
 RUN pip install --no-cache-dir dash==2.17.1 plotly==5.22.0 numpy==1.26.4 pandas==2.2.2 matplotlib==3.9.0
 
-# Expose the port the app runs on
-EXPOSE 8888
+# Expose the standard Cloud Run port
+EXPOSE 8080
 
-# Run the Dash app (note: you'll need to update the host to '0.0.0.0' in app.py for external access)
+# Run the Dash app
 CMD ["python", "app.py"]
